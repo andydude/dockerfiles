@@ -72,8 +72,8 @@ Another downside of vmarmol's version is that the *real* exit() implementation o
 ```
 _start:
     mov $34, %al  # SYS_pause is 34
-	syscall
-	jmp _start
+    syscall
+    jmp _start
 ```
 
 # Thanks
