@@ -1,5 +1,5 @@
 # stage 0
-ARG DEBIAN_VERSION
+ARG DEBIAN_VERSION=${DEBIAN_VERSION}
 FROM debian:${DEBIAN_VERSION}
 # RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y usrmerge
 

@@ -1,5 +1,5 @@
 # stage 0
-ARG AMZN_VERSION
+ARG AMZN_VERSION=${AMZN_VERSION}
 FROM amazonlinux:${AMZN_VERSION}
 
 # stage 1

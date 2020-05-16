@@ -1,5 +1,5 @@
 # stage 0
-ARG UBUNTU_VERSION
+ARG UBUNTU_VERSION=${UBUNTU_VERSION}
 FROM ubuntu:${UBUNTU_VERSION}
 # RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y usrmerge
 
