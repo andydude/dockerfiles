@@ -1,0 +1,7 @@
+version: '3'
+services:
+  xar:
+    image: localhost:5000/xar
+    build:
+      dockerfile: xar.Dockerfile
+      context: .

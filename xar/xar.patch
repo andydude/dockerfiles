@@ -1,0 +1,10 @@
+--- a/lib/hash.c
++++ b/lib/hash.c
+@@ -45,5 +45,7 @@
+ #include <CommonCrypto/CommonDigest.h>
+ #include <CommonCrypto/CommonDigestSPI.h>
+ #else
++#include <openssl/ossl_typ.h>
++typedef struct evp_md_ctx_st { unsigned long dummy[12]; } EVP_MD_CTX;
+ #include <openssl/evp.h>
+ #endif
