@@ -1,0 +1,3 @@
+FROM scratch
+COPY nsenter1-small /nsenter1
+ENTRYPOINT ["/nsenter1"]
