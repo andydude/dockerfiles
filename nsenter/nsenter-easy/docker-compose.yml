@@ -1,0 +1,11 @@
+# docker run -it --rm --privileged --pid=host justincormack/nsenter1
+version: '3'
+services:
+  sh:
+    build: .
+    image: andydude64/nsenter:latest
+    pid: host
+    privileged: true
+    stdin_open: true
+    tty: true
+    
