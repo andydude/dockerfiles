@@ -1,0 +1,10 @@
+version: '3'
+services:
+  sh:
+    build: .
+    image: andydude64/nsenter1:1.0-small
+    pid: host
+    privileged: true
+    stdin_open: true
+    tty: true
+    

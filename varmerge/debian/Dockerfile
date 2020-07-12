@@ -7,8 +7,10 @@ FROM debian:${DEBIAN_VERSION}
 FROM alpine:latest
 WORKDIR /mnt
 COPY --from=0 / /mnt
+COPY common.sh /
 COPY debian.sh /
-RUN . /debian.sh \
+RUN . /common.sh \
+  && . /debian.sh \
   && _usrmerge_debian \
   && _varmerge_debian
 

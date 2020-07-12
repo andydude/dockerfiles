@@ -6,8 +6,9 @@ FROM centos:${CENTOS_VERSION}
 FROM alpine:latest
 WORKDIR /mnt
 COPY --from=0 / /mnt
+COPY common.sh /
 COPY centos.sh /
-RUN . /centos.sh \
+RUN . /common.sh && . /centos.sh \
   && _usrmerge_centos \
   && _varmerge_centos
 

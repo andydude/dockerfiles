@@ -1,0 +1,44 @@
+version: '3'
+services:
+  amzn:
+    image: andydude64/amzn-varmerge:${AMZN_VERSION}
+    build:
+      context: amazonlinux
+      args:
+        AMZN_VERSION: ${AMZN_VERSION}
+  alpine:
+    image: andydude64/alpine-varmerge:${ALPINE_VERSION}
+    build:
+      context: alpinelinux
+      args:
+        ALPINE_VERSION: ${ALPINE_VERSION}
+  busybox:
+    image: andydude64/busybox-varmerge:${BUSYBOX_VERSION}
+    build:
+      context: busybox
+      args:
+        BUSYBOX_VERSION: ${BUSYBOX_VERSION}
+  centos:
+    image: andydude64/centos-varmerge:${CENTOS_VERSION}
+    build:
+      context: centos
+      args:
+        CENTOS_VERSION: ${CENTOS_VERSION}
+  debian:
+    image: andydude64/debian-varmerge:${DEBIAN_VERSION}
+    build:
+      context: debian
+      args:
+        DEBIAN_VERSION: ${DEBIAN_VERSION}
+  fedora:
+    image: andydude64/fedora-varmerge:${FEDORA_VERSION}
+    build:
+      context: fedora
+      args:
+        FEDORA_VERSION: ${FEDORA_VERSION}
+  ubuntu:
+    image: andydude64/ubuntu-varmerge:${UBUNTU_VERSION}
+    build:
+      context: ubuntu
+      args:
+        UBUNTU_VERSION: ${UBUNTU_VERSION}

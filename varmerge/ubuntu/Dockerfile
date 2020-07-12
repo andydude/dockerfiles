@@ -7,8 +7,9 @@ FROM ubuntu:${UBUNTU_VERSION}
 FROM alpine:latest
 WORKDIR /mnt
 COPY --from=0 / /mnt
+COPY common.sh /
 COPY ubuntu.sh /
-RUN . /ubuntu.sh \
+RUN . /common.sh && . /ubuntu.sh \
   && _usrmerge_ubuntu \
   && _varmerge_ubuntu
 

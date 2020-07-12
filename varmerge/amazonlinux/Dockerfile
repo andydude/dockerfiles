@@ -6,8 +6,10 @@ FROM amazonlinux:${AMZN_VERSION}
 FROM alpine:latest
 WORKDIR /mnt
 COPY --from=0 / /mnt
+COPY common.sh /
 COPY amzn.sh /
-RUN . /amzn.sh \
+RUN . /common.sh \
+  && . /amzn.sh \
   && _varmerge_amzn
 
 # stage 2

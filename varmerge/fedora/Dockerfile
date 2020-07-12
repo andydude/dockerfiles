@@ -6,8 +6,10 @@ FROM fedora:${FEDORA_VERSION}
 FROM alpine:latest
 WORKDIR /mnt
 COPY --from=0 / /mnt
+COPY common.sh /
 COPY fedora.sh /
-RUN . /fedora.sh && _varmerge_fedora
+RUN . /common.sh && . /fedora.sh \
+    && _varmerge_fedora
 
 # stage 2
 FROM scratch

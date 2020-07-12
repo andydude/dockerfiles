@@ -6,9 +6,12 @@ FROM busybox:${BUSYBOX_VERSION}
 FROM busybox:latest
 WORKDIR /mnt
 COPY --from=0 / /mnt
+COPY common.sh /
 COPY busybox.sh /
-COPY busybox-cmds.txt /
-RUN . /busybox.sh \
+COPY busybox-bin-cmds.txt /
+COPY busybox-sbin-cmds.txt /
+RUN . /common.sh \
+  && . /busybox.sh \
   && _usrmerge_busybox \
   && _varmerge_busybox
 

@@ -11,7 +11,7 @@
 	
 .LC0:  
 	# The rest of e_ident
-	.asciz "/bin/sh"
+	.string "/bin/sh"
 
 	# The rest of the ELF Header
 	.short		 2	# e_type == ET_EXEC

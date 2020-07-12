@@ -6,10 +6,17 @@ FROM alpine:${ALPINE_VERSION}
 FROM alpine:latest
 WORKDIR /mnt
 COPY --from=0 / /mnt
+COPY common.sh /
 COPY alpine.sh /
-RUN . /alpine.sh \
-  && _usrmerge_alpine \
-  && _varmerge_alpine
+COPY alpine-bin-cmds.txt /
+COPY alpine-sbin-cmds.txt /
+COPY alpine-usr-bin-cmds.txt /
+COPY alpine-usr-sbin-cmds.txt /
+RUN . /common.sh \
+  && . /alpine.sh \
+  && _usrmerge_alpine
+#  && _usrmerge_alpine \
+#  && _varmerge_alpine
 
 # stage 2
 FROM scratch

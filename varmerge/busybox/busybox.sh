@@ -12,9 +12,17 @@ _usrmerge_busybox() {
   
   # usrmerge absolute links
   cd usr/bin
-  for x in $(cat /busybox-cmds.txt); do 
-    unlink $x
-    ln -s busybox $x
+  for x in $(cat /busybox-sbin-cmds.txt); do 
+    unlink "$x"
+  done
+  for x in $(cat /busybox-bin-cmds.txt); do 
+    unlink "$x"
+    ln -s busybox "$x"
+  done
+  cd ../..
+  cd usr/sbin
+  for x in $(cat /busybox-sbin-cmds.txt); do 
+    ln -s ../bin/busybox "$x"
   done
   cd ../..
 }
